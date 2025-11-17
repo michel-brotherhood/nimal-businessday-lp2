@@ -14,6 +14,13 @@ const Hero = () => {
           isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
         }`}
       >
+        {/* Business Day 2025 */}
+        <div className="mb-8">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-primary text-center">
+            Business Day 2025
+          </h2>
+        </div>
+
         {/* Logos - Smaller */}
         <div className="flex items-center justify-center gap-6 sm:gap-8 lg:gap-10 mb-12 sm:mb-16 flex-wrap">
           <img 
