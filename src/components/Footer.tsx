@@ -8,19 +8,19 @@ const Footer = () => {
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 mb-8">
           {/* Contact Section */}
-          <div>
+          <div className="text-center md:text-left">
             <h3 className="text-primary text-xl font-bold mb-4">Contato</h3>
             <div className="space-y-3">
               <a 
                 href="mailto:atendimento@nimaltecnologia.com.br" 
-                className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors"
+                className="flex items-center justify-center md:justify-start gap-2 text-muted-foreground hover:text-primary transition-colors"
               >
                 <Mail className="w-5 h-5" />
                 <span className="text-sm">atendimento@nimaltecnologia.com.br</span>
               </a>
               <a 
                 href="tel:+552136207777" 
-                className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors"
+                className="flex items-center justify-center md:justify-start gap-2 text-muted-foreground hover:text-primary transition-colors"
               >
                 <Phone className="w-5 h-5" />
                 <span className="text-sm">(21) 3620-7777</span>

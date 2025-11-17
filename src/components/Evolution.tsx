@@ -9,7 +9,7 @@ const Evolution = () => {
   const { ref: tableRef, isVisible: tableVisible } = useScrollAnimation();
 
   return (
-    <section className="py-8 sm:py-12 lg:py-16 px-4 relative z-10">
+    <section className="py-6 sm:py-10 lg:py-14 px-4 relative z-10">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div 
@@ -51,80 +51,145 @@ const Evolution = () => {
         {/* Comparison Table */}
         <div 
           ref={tableRef}
-          className={`mb-12 sm:mb-16 overflow-x-auto transition-all duration-1000 delay-400 ${
+          className={`mb-12 sm:mb-16 transition-all duration-1000 delay-400 ${
             tableVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-full'
           }`}
         >
-          <div className="bg-card/80 backdrop-blur-md border border-border rounded-xl overflow-hidden min-w-[800px]">
-            <table className="w-full">
-              <thead>
-                <tr className="border-b border-border">
-                  <th className="text-left p-4 sm:p-6 text-foreground font-bold text-sm sm:text-base">Característica</th>
-                  <th className="text-left p-4 sm:p-6 text-foreground font-bold text-sm sm:text-base">
-                    <div className="flex items-center gap-2 sm:gap-4">
-                      <img src={mc33Image} alt="MC33" className="h-16 sm:h-20 w-auto object-contain" />
-                      <span>MC33</span>
+          {/* Desktop Table */}
+          <div className="hidden lg:block overflow-x-auto">
+            <div className="bg-card/80 backdrop-blur-md border border-border rounded-xl overflow-hidden min-w-[800px]">
+              <table className="w-full">
+                <thead>
+                  <tr className="border-b border-border">
+                    <th className="text-left p-4 xl:p-6 text-foreground font-bold text-sm xl:text-base">Característica</th>
+                    <th className="text-left p-4 xl:p-6 text-foreground font-bold text-sm xl:text-base">
+                      <div className="flex items-center gap-3">
+                        <img src={mc33Image} alt="MC33" className="h-16 xl:h-20 w-auto object-contain" />
+                        <span>MC33</span>
+                      </div>
+                    </th>
+                    <th className="text-left p-4 xl:p-6 text-foreground font-bold text-sm xl:text-base">
+                      <div className="flex items-center gap-3">
+                        <img src={mc34Image} alt="MC34" className="h-16 xl:h-20 w-auto object-contain" />
+                        <span>MC34</span>
+                      </div>
+                    </th>
+                    <th className="text-left p-4 xl:p-6 text-foreground font-bold text-sm xl:text-base">Vantagem Estratégica</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr className="border-b border-border hover:bg-muted/50 transition-all duration-300 hover:translate-x-2">
+                    <td className="p-4 xl:p-6 font-semibold text-foreground text-sm xl:text-base">Sistema Operacional</td>
+                    <td className="p-4 xl:p-6 text-muted-foreground text-sm xl:text-base">Android 8.1 (ou similar)</td>
+                    <td className="p-4 xl:p-6 text-accent font-semibold text-sm xl:text-base">Android 13 com suíte Zebra DNA</td>
+                    <td className="p-4 xl:p-6 text-muted-foreground text-sm xl:text-base">
+                      <strong className="text-foreground">Segurança e Longevidade:</strong> Suporte estendido, 
+                      patches de segurança atualizados e acesso a aplicativos modernos e mais pesados.
+                    </td>
+                  </tr>
+                  <tr className="border-b border-border hover:bg-muted/50 transition-all duration-300 hover:translate-x-2">
+                    <td className="p-4 xl:p-6 font-semibold text-foreground text-sm xl:text-base">Conectividade</td>
+                    <td className="p-4 xl:p-6 text-muted-foreground text-sm xl:text-base">Wi-Fi (padrões antigos)</td>
+                    <td className="p-4 xl:p-6 text-accent font-semibold text-sm xl:text-base">Wi-Fi 6E, Bluetooth 5.3, 5G/WWAN (opcional)</td>
+                    <td className="p-4 xl:p-6 text-muted-foreground text-sm xl:text-base">
+                      <strong className="text-foreground">Operação Ininterrupta:</strong> Conexão ultrarrápida 
+                      e estável, eliminando falhas de rede e acelerando a transmissão de dados.
+                    </td>
+                  </tr>
+                  <tr className="border-b border-border hover:bg-muted/50 transition-all duration-300 hover:translate-x-2">
+                    <td className="p-4 xl:p-6 font-semibold text-foreground text-sm xl:text-base">Robustez e Vedação</td>
+                    <td className="p-4 xl:p-6 text-muted-foreground text-sm xl:text-base">IP54, quedas de até 1,5 m (≈ 5 ft)</td>
+                    <td className="p-4 xl:p-6 text-accent font-semibold text-sm xl:text-base">IP65/IP67, quedas de até 2,4 m (≈ 8 ft)</td>
+                    <td className="p-4 xl:p-6 text-muted-foreground text-sm xl:text-base">
+                      <strong className="text-foreground">Máximo Uptime:</strong> Resistência superior a poeira, 
+                      jatos d'água, submersão e impactos, reduzindo drasticamente os custos com manutenção e o 
+                      tempo de inatividade.
+                    </td>
+                  </tr>
+                  <tr className="border-b border-border hover:bg-muted/50 transition-all duration-300 hover:translate-x-2">
+                    <td className="p-4 xl:p-6 font-semibold text-foreground text-sm xl:text-base">Bateria e Gerenciamento</td>
+                    <td className="p-4 xl:p-6 text-muted-foreground text-sm xl:text-base">Bateria padrão</td>
+                    <td className="p-4 xl:p-6 text-accent font-semibold text-sm xl:text-base">7000 mAh com hot-swap e BLE beacon</td>
+                    <td className="p-4 xl:p-6 text-muted-foreground text-sm xl:text-base">
+                      <strong className="text-foreground">Autonomia e Rastreabilidade:</strong> Turnos completos 
+                      sem interrupção para recarga e localização fácil de ativos, otimizando o uso e prevenindo perdas.
+                    </td>
+                  </tr>
+                  <tr className="hover:bg-muted/50 transition-all duration-300 hover:translate-x-2">
+                    <td className="p-4 xl:p-6 font-semibold text-foreground text-sm xl:text-base">Performance de Leitura</td>
+                    <td className="p-4 xl:p-6 text-muted-foreground text-sm xl:text-base">Padrão</td>
+                    <td className="p-4 xl:p-6 text-accent font-semibold text-sm xl:text-base">Leitura de longo alcance</td>
+                    <td className="p-4 xl:p-6 text-muted-foreground text-sm xl:text-base">
+                      <strong className="text-foreground">Eficiência Ampliada:</strong> Captura de códigos de 
+                      barras a curtas e longas distâncias, ideal para armazéns altos e pátios (yards), minimizando 
+                      movimentação e fadiga do operador.
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          {/* Mobile/Tablet Cards */}
+          <div className="lg:hidden space-y-6">
+            {[
+              {
+                feature: "Sistema Operacional",
+                mc33: "Android 8.1 (ou similar)",
+                mc34: "Android 13 com suíte Zebra DNA",
+                advantage: "Segurança e Longevidade: Suporte estendido, patches de segurança atualizados e acesso a aplicativos modernos e mais pesados."
+              },
+              {
+                feature: "Conectividade",
+                mc33: "Wi-Fi (padrões antigos)",
+                mc34: "Wi-Fi 6E, Bluetooth 5.3, 5G/WWAN (opcional)",
+                advantage: "Operação Ininterrupta: Conexão ultrarrápida e estável, eliminando falhas de rede e acelerando a transmissão de dados."
+              },
+              {
+                feature: "Robustez e Vedação",
+                mc33: "IP54, quedas de até 1,5 m (≈ 5 ft)",
+                mc34: "IP65/IP67, quedas de até 2,4 m (≈ 8 ft)",
+                advantage: "Máximo Uptime: Resistência superior a poeira, jatos d'água, submersão e impactos, reduzindo drasticamente os custos com manutenção e o tempo de inatividade."
+              },
+              {
+                feature: "Bateria e Gerenciamento",
+                mc33: "Bateria padrão",
+                mc34: "7000 mAh com hot-swap e BLE beacon",
+                advantage: "Autonomia e Rastreabilidade: Turnos completos sem interrupção para recarga e localização fácil de ativos, otimizando o uso e prevenindo perdas."
+              },
+              {
+                feature: "Performance de Leitura",
+                mc33: "Padrão",
+                mc34: "Leitura de longo alcance",
+                advantage: "Eficiência Ampliada: Captura de códigos de barras a curtas e longas distâncias, ideal para armazéns altos e pátios (yards), minimizando movimentação e fadiga do operador."
+              }
+            ].map((item, index) => (
+              <div key={index} className="bg-card/80 backdrop-blur-md border border-border rounded-xl p-5 sm:p-6 hover:border-accent transition-colors">
+                <h4 className="text-lg sm:text-xl font-bold text-foreground mb-4">{item.feature}</h4>
+                
+                <div className="grid grid-cols-2 gap-4 mb-4">
+                  <div className="space-y-2">
+                    <div className="flex items-center gap-2 mb-2">
+                      <img src={mc33Image} alt="MC33" className="h-12 sm:h-14 w-auto object-contain" />
+                      <span className="font-semibold text-foreground text-sm sm:text-base">MC33</span>
                     </div>
-                  </th>
-                  <th className="text-left p-4 sm:p-6 text-foreground font-bold text-sm sm:text-base">
-                    <div className="flex items-center gap-2 sm:gap-4">
-                      <img src={mc34Image} alt="MC34" className="h-16 sm:h-20 w-auto object-contain" />
-                      <span>MC34</span>
+                    <p className="text-sm sm:text-base text-muted-foreground">{item.mc33}</p>
+                  </div>
+                  
+                  <div className="space-y-2">
+                    <div className="flex items-center gap-2 mb-2">
+                      <img src={mc34Image} alt="MC34" className="h-12 sm:h-14 w-auto object-contain" />
+                      <span className="font-semibold text-foreground text-sm sm:text-base">MC34</span>
                     </div>
-                  </th>
-                  <th className="text-left p-4 sm:p-6 text-foreground font-bold text-sm sm:text-base">Vantagem Estratégica</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr className="border-b border-border hover:bg-muted/50 transition-all duration-300 hover:translate-x-2">
-                  <td className="p-4 sm:p-6 font-semibold text-foreground text-sm sm:text-base">Sistema Operacional</td>
-                  <td className="p-4 sm:p-6 text-muted-foreground text-sm sm:text-base">Android 8.1 (ou similar)</td>
-                  <td className="p-4 sm:p-6 text-accent font-semibold text-sm sm:text-base">Android 13 com suíte Zebra DNA</td>
-                  <td className="p-4 sm:p-6 text-muted-foreground text-sm sm:text-base">
-                    <strong className="text-foreground">Segurança e Longevidade:</strong> Suporte estendido, 
-                    patches de segurança atualizados e acesso a aplicativos modernos e mais pesados.
-                  </td>
-                </tr>
-                <tr className="border-b border-border hover:bg-muted/50 transition-all duration-300 hover:translate-x-2">
-                  <td className="p-4 sm:p-6 font-semibold text-foreground text-sm sm:text-base">Conectividade</td>
-                  <td className="p-4 sm:p-6 text-muted-foreground text-sm sm:text-base">Wi-Fi (padrões antigos)</td>
-                  <td className="p-4 sm:p-6 text-accent font-semibold text-sm sm:text-base">Wi-Fi 6E, Bluetooth 5.3, 5G/WWAN (opcional)</td>
-                  <td className="p-4 sm:p-6 text-muted-foreground text-sm sm:text-base">
-                    <strong className="text-foreground">Operação Ininterrupta:</strong> Conexão ultrarrápida 
-                    e estável, eliminando falhas de rede e acelerando a transmissão de dados.
-                  </td>
-                </tr>
-                <tr className="border-b border-border hover:bg-muted/50 transition-all duration-300 hover:translate-x-2">
-                  <td className="p-4 sm:p-6 font-semibold text-foreground text-sm sm:text-base">Robustez e Vedação</td>
-                  <td className="p-4 sm:p-6 text-muted-foreground text-sm sm:text-base">IP54, quedas de até 1,5 m (≈ 5 ft)</td>
-                  <td className="p-4 sm:p-6 text-accent font-semibold text-sm sm:text-base">IP65/IP67, quedas de até 2,4 m (≈ 8 ft)</td>
-                  <td className="p-4 sm:p-6 text-muted-foreground text-sm sm:text-base">
-                    <strong className="text-foreground">Máximo Uptime:</strong> Resistência superior a poeira, 
-                    jatos d'água, submersão e impactos, reduzindo drasticamente os custos com manutenção e o 
-                    tempo de inatividade.
-                  </td>
-                </tr>
-                <tr className="border-b border-border hover:bg-muted/50 transition-all duration-300 hover:translate-x-2">
-                  <td className="p-4 sm:p-6 font-semibold text-foreground text-sm sm:text-base">Bateria e Gerenciamento</td>
-                  <td className="p-4 sm:p-6 text-muted-foreground text-sm sm:text-base">Bateria padrão</td>
-                  <td className="p-4 sm:p-6 text-accent font-semibold text-sm sm:text-base">7000 mAh com hot-swap e BLE beacon</td>
-                  <td className="p-4 sm:p-6 text-muted-foreground text-sm sm:text-base">
-                    <strong className="text-foreground">Autonomia e Rastreabilidade:</strong> Turnos completos 
-                    sem interrupção para recarga e localização fácil de ativos, otimizando o uso e prevenindo perdas.
-                  </td>
-                </tr>
-                <tr className="hover:bg-muted/50 transition-all duration-300 hover:translate-x-2">
-                  <td className="p-4 sm:p-6 font-semibold text-foreground text-sm sm:text-base">Performance de Leitura</td>
-                  <td className="p-4 sm:p-6 text-muted-foreground text-sm sm:text-base">Padrão</td>
-                  <td className="p-4 sm:p-6 text-accent font-semibold text-sm sm:text-base">Leitura de longo alcance</td>
-                  <td className="p-4 sm:p-6 text-muted-foreground text-sm sm:text-base">
-                    <strong className="text-foreground">Eficiência Ampliada:</strong> Captura de códigos de 
-                    barras a curtas e longas distâncias, ideal para armazéns altos e pátios (yards), minimizando 
-                    movimentação e fadiga do operador.
-                  </td>
-                </tr>
-              </tbody>
-            </table>
+                    <p className="text-sm sm:text-base text-accent font-semibold">{item.mc34}</p>
+                  </div>
+                </div>
+                
+                <div className="pt-4 border-t border-border">
+                  <p className="text-sm sm:text-base text-muted-foreground">{item.advantage}</p>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
 
