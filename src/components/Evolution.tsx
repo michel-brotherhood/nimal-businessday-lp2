@@ -1,4 +1,4 @@
-import modecLogo from "@/assets/modec-logo.png";
+import modecLogo from "@/assets/modec-logo-white.png";
 import sc9Equipment from "@/assets/sc9-zebra-bartec.webp";
 import cocaColaAndinaLogo from "@/assets/coca-cola-andina-logo.webp";
 import tc83Equipment from "@/assets/tc83-zebra.png";
@@ -45,7 +45,7 @@ const Evolution = () => {
                 <img 
                   src={sc9Equipment} 
                   alt="SC9 - Zebra e Bartec" 
-                  className="w-full max-w-[300px] h-auto object-contain rounded-lg"
+                  className="w-full max-w-[250px] h-auto object-contain rounded-lg"
                 />
               </div>
             </div>
