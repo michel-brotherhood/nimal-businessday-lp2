@@ -91,10 +91,10 @@ const Evolution = () => {
   console.log("Evolution: searchTerm", searchTerm);
 
   return (
-    <section className="py-6 sm:py-10 lg:py-14 px-4 relative z-10">
+    <section className="py-8 sm:py-12 lg:py-16 px-4 relative z-10">
       <div className="max-w-7xl mx-auto">
         {/* Busca */}
-        <div className="mb-12">
+        <div className="mb-8">
           <div className="relative max-w-md mx-auto">
             <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground h-4 w-4" />
             <Input

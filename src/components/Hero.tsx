@@ -6,7 +6,7 @@ const Hero = () => {
   const { ref, isVisible } = useScrollAnimation();
 
   return (
-    <section className="relative min-h-screen flex flex-col items-center justify-center px-4 sm:px-6 lg:px-8 overflow-hidden">
+    <section className="relative min-h-[70vh] flex flex-col items-center justify-center px-4 sm:px-6 lg:px-8 overflow-hidden">
       {/* Content */}
       <div 
         ref={ref}
