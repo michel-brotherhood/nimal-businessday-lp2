@@ -14,14 +14,14 @@ const Evolution = () => {
         {/* Header */}
         <div 
           ref={headerRef}
-          className={`text-center mb-12 sm:mb-16 transition-all duration-1000 ${
+          className={`text-center mb-12 sm:mb-16 pb-4 transition-all duration-1000 ${
             headerVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
           }`}
         >
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-2 text-foreground px-4">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-3 text-foreground px-4 leading-tight">
             Do Confiável ao Imbatível:
           </h2>
-          <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent px-4">
+          <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent px-4 leading-tight pb-2">
             A Evolução que Sua Operação Exige
           </h2>
         </div>
