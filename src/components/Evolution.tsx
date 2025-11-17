@@ -147,7 +147,11 @@ const Evolution = () => {
                         <img
                           src={caseItem.logo}
                           alt={`${caseItem.clientName} Logo`}
-                          className="h-16 sm:h-20 w-auto object-contain"
+                          className={`w-auto object-contain ${
+                            caseItem.clientName === "Águas do Rio" 
+                              ? "h-24 sm:h-28" 
+                              : "h-16 sm:h-20"
+                          }`}
                         />
                       </div>
 
