@@ -28,9 +28,9 @@ const TechnicalServices = () => {
   ];
 
   const team = [
-    { name: "Jefferson", photo: jeffersonPhoto },
-    { name: "Ian", photo: ianPhoto },
-    { name: "Carlos Renato", photo: carlosPhoto },
+    { name: "Jefferson Rodrigues", photo: jeffersonPhoto },
+    { name: "Carlos Silveira", photo: carlosPhoto },
+    { name: "Ian Oliveira", photo: ianPhoto },
   ];
 
   return (
@@ -115,10 +115,6 @@ const TechnicalServices = () => {
             ))}
           </div>
 
-          <p className="text-center text-muted-foreground mt-8 text-sm sm:text-base">
-            Foto dos meninos, vou enviar- mas caso vocês consigam ja baixar ai direto:<br />
-            Jefferson, Ian, Carlos Renato
-          </p>
         </div>
       </div>
     </section>
