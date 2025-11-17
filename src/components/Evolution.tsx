@@ -1,13 +1,22 @@
-import mc33Image from "@/assets/mc33.webp";
-import mc34Image from "@/assets/mc34.webp";
+import nissanLogo from "@/assets/nissan-logo.svg";
+import ambevLogo from "@/assets/ambev-logo.png";
+import nissan1 from "@/assets/nissan-1.jpeg";
+import nissan2 from "@/assets/nissan-2.jpeg";
+import nissan3 from "@/assets/nissan-3.jpeg";
+import nissan4 from "@/assets/nissan-4.jpeg";
+import nissan5 from "@/assets/nissan-5.jpeg";
+import nissan6 from "@/assets/nissan-6.jpeg";
+import ambev1 from "@/assets/ambev-1.jpeg";
+import ambev2 from "@/assets/ambev-2.jpeg";
 import showcaseVideo from "@/assets/showcase-video.mp4";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
-import Statistics from "./Statistics";
 
 const Evolution = () => {
   const { ref: headerRef, isVisible: headerVisible } = useScrollAnimation();
   const { ref: contentRef, isVisible: contentVisible } = useScrollAnimation();
-  const { ref: tableRef, isVisible: tableVisible } = useScrollAnimation();
+  const { ref: nissanRef, isVisible: nissanVisible } = useScrollAnimation();
+  const { ref: ambevRef, isVisible: ambevVisible } = useScrollAnimation();
+  const { ref: videoRef, isVisible: videoVisible } = useScrollAnimation();
 
   return (
     <section className="py-6 sm:py-10 lg:py-14 px-4 relative z-10">
@@ -19,247 +28,149 @@ const Evolution = () => {
             headerVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
           }`}
         >
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-3 text-foreground px-4 leading-tight">
-            Do Confiável ao Imbatível:
-          </h2>
           <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent px-4 leading-tight pb-2">
-            A Evolução que Sua Operação Exige
+            IOT e RFID
           </h2>
         </div>
 
-        {/* Introduction */}
+        {/* IOT and RFID Introduction */}
         <div 
           ref={contentRef}
-          className={`max-w-5xl mx-auto mb-12 sm:mb-16 transition-all duration-1000 delay-200 ${
+          className={`max-w-5xl mx-auto mb-16 sm:mb-20 transition-all duration-1000 delay-200 ${
             contentVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
           }`}
         >
           <div className="bg-card/80 backdrop-blur-md border border-border rounded-xl p-6 sm:p-8 lg:p-10">
             <p className="text-base sm:text-lg text-muted-foreground leading-relaxed mb-4 sm:mb-6">
-              O coletor de dados MC33 estabeleceu um padrão de confiança e eficiência em operações por anos. 
-              No entanto, a evolução da tecnologia móvel corporativa apresenta um novo patamar de produtividade, 
-              robustez e conectividade. A nova geração de dispositivos não é apenas uma atualização, mas uma 
-              transformação completa na capacidade de sua equipe, projetada para os desafios do presente e as 
-              demandas do futuro.
+              RFID ou Identificação por radiofrequência é um aparelho de identificação automática através de 
+              sinais de rádio que recuperam e armazenam dados remotos através de etiquetas RFID.
             </p>
             <p className="text-base sm:text-lg text-muted-foreground leading-relaxed">
-              Para ilustrar o salto de performance, apresentamos um comparativo direto que detalha as principais 
-              diferenças técnicas e seus benefícios práticos.
+              Esta etiqueta é um transponder, um pequeno objeto que é colocado em embalagens ou produtos, 
+              que contém chips de silício e antenas que permitem captar os sinais de rádio enviados pela 
+              base transmissora.
             </p>
           </div>
         </div>
 
-        {/* Comparison Table */}
+        {/* Video Showcase */}
         <div 
-          ref={tableRef}
-          className={`mb-12 sm:mb-16 transition-all duration-1000 delay-400 ${
-            tableVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-full'
+          ref={videoRef}
+          className={`max-w-5xl mx-auto mb-16 sm:mb-20 transition-all duration-1000 delay-300 ${
+            videoVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-95'
           }`}
         >
-          {/* Desktop Table */}
-          <div className="hidden lg:block overflow-x-auto">
-            <div className="bg-card/80 backdrop-blur-md border border-border rounded-xl overflow-hidden min-w-[800px]">
-              <table className="w-full">
-                <thead>
-                  <tr className="border-b border-border">
-                    <th className="text-left p-4 xl:p-6 text-foreground font-bold text-sm xl:text-base">Característica</th>
-                    <th className="text-left p-4 xl:p-6 text-foreground font-bold text-sm xl:text-base">
-                      <div className="flex items-center gap-3">
-                        <img src={mc33Image} alt="MC33" className="h-16 xl:h-20 w-auto object-contain" />
-                        <span>MC33</span>
-                      </div>
-                    </th>
-                    <th className="text-left p-4 xl:p-6 text-foreground font-bold text-sm xl:text-base">
-                      <div className="flex items-center gap-3">
-                        <img src={mc34Image} alt="MC34" className="h-16 xl:h-20 w-auto object-contain" />
-                        <span>MC34</span>
-                      </div>
-                    </th>
-                    <th className="text-left p-4 xl:p-6 text-foreground font-bold text-sm xl:text-base">Vantagem Estratégica</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr className="border-b border-border hover:bg-muted/50 transition-all duration-300 hover:translate-x-2">
-                    <td className="p-4 xl:p-6 font-semibold text-foreground text-sm xl:text-base">Sistema Operacional</td>
-                    <td className="p-4 xl:p-6 text-muted-foreground text-sm xl:text-base">Android 8.1 (ou similar)</td>
-                    <td className="p-4 xl:p-6 text-accent font-semibold text-sm xl:text-base">Android 13 com suíte Zebra DNA</td>
-                    <td className="p-4 xl:p-6 text-muted-foreground text-sm xl:text-base">
-                      <strong className="text-foreground">Segurança e Longevidade:</strong> Suporte estendido, 
-                      patches de segurança atualizados e acesso a aplicativos modernos e mais pesados.
-                    </td>
-                  </tr>
-                  <tr className="border-b border-border hover:bg-muted/50 transition-all duration-300 hover:translate-x-2">
-                    <td className="p-4 xl:p-6 font-semibold text-foreground text-sm xl:text-base">Conectividade</td>
-                    <td className="p-4 xl:p-6 text-muted-foreground text-sm xl:text-base">Wi-Fi (padrões antigos)</td>
-                    <td className="p-4 xl:p-6 text-accent font-semibold text-sm xl:text-base">Wi-Fi 6E, Bluetooth 5.3, 5G/WWAN (opcional)</td>
-                    <td className="p-4 xl:p-6 text-muted-foreground text-sm xl:text-base">
-                      <strong className="text-foreground">Operação Ininterrupta:</strong> Conexão ultrarrápida 
-                      e estável, eliminando falhas de rede e acelerando a transmissão de dados.
-                    </td>
-                  </tr>
-                  <tr className="border-b border-border hover:bg-muted/50 transition-all duration-300 hover:translate-x-2">
-                    <td className="p-4 xl:p-6 font-semibold text-foreground text-sm xl:text-base">Robustez e Vedação</td>
-                    <td className="p-4 xl:p-6 text-muted-foreground text-sm xl:text-base">IP54, quedas de até 1,5 m (≈ 5 ft)</td>
-                    <td className="p-4 xl:p-6 text-accent font-semibold text-sm xl:text-base">IP65/IP67, quedas de até 2,4 m (≈ 8 ft)</td>
-                    <td className="p-4 xl:p-6 text-muted-foreground text-sm xl:text-base">
-                      <strong className="text-foreground">Máximo Uptime:</strong> Resistência superior a poeira, 
-                      jatos d'água, submersão e impactos, reduzindo drasticamente os custos com manutenção e o 
-                      tempo de inatividade.
-                    </td>
-                  </tr>
-                  <tr className="border-b border-border hover:bg-muted/50 transition-all duration-300 hover:translate-x-2">
-                    <td className="p-4 xl:p-6 font-semibold text-foreground text-sm xl:text-base">Bateria e Gerenciamento</td>
-                    <td className="p-4 xl:p-6 text-muted-foreground text-sm xl:text-base">Bateria padrão</td>
-                    <td className="p-4 xl:p-6 text-accent font-semibold text-sm xl:text-base">7000 mAh com hot-swap e BLE beacon</td>
-                    <td className="p-4 xl:p-6 text-muted-foreground text-sm xl:text-base">
-                      <strong className="text-foreground">Autonomia e Rastreabilidade:</strong> Turnos completos 
-                      sem interrupção para recarga e localização fácil de ativos, otimizando o uso e prevenindo perdas.
-                    </td>
-                  </tr>
-                  <tr className="hover:bg-muted/50 transition-all duration-300 hover:translate-x-2">
-                    <td className="p-4 xl:p-6 font-semibold text-foreground text-sm xl:text-base">Performance de Leitura</td>
-                    <td className="p-4 xl:p-6 text-muted-foreground text-sm xl:text-base">Padrão</td>
-                    <td className="p-4 xl:p-6 text-accent font-semibold text-sm xl:text-base">Leitura de longo alcance</td>
-                    <td className="p-4 xl:p-6 text-muted-foreground text-sm xl:text-base">
-                      <strong className="text-foreground">Eficiência Ampliada:</strong> Captura de códigos de 
-                      barras a curtas e longas distâncias, ideal para armazéns altos e pátios (yards), minimizando 
-                      movimentação e fadiga do operador.
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          </div>
-
-          {/* Mobile/Tablet Cards */}
-          <div className="lg:hidden space-y-6">
-            {[
-              {
-                feature: "Sistema Operacional",
-                mc33: "Android 8.1 (ou similar)",
-                mc34: "Android 13 com suíte Zebra DNA",
-                advantage: "Segurança e Longevidade: Suporte estendido, patches de segurança atualizados e acesso a aplicativos modernos e mais pesados."
-              },
-              {
-                feature: "Conectividade",
-                mc33: "Wi-Fi (padrões antigos)",
-                mc34: "Wi-Fi 6E, Bluetooth 5.3, 5G/WWAN (opcional)",
-                advantage: "Operação Ininterrupta: Conexão ultrarrápida e estável, eliminando falhas de rede e acelerando a transmissão de dados."
-              },
-              {
-                feature: "Robustez e Vedação",
-                mc33: "IP54, quedas de até 1,5 m (≈ 5 ft)",
-                mc34: "IP65/IP67, quedas de até 2,4 m (≈ 8 ft)",
-                advantage: "Máximo Uptime: Resistência superior a poeira, jatos d'água, submersão e impactos, reduzindo drasticamente os custos com manutenção e o tempo de inatividade."
-              },
-              {
-                feature: "Bateria e Gerenciamento",
-                mc33: "Bateria padrão",
-                mc34: "7000 mAh com hot-swap e BLE beacon",
-                advantage: "Autonomia e Rastreabilidade: Turnos completos sem interrupção para recarga e localização fácil de ativos, otimizando o uso e prevenindo perdas."
-              },
-              {
-                feature: "Performance de Leitura",
-                mc33: "Padrão",
-                mc34: "Leitura de longo alcance",
-                advantage: "Eficiência Ampliada: Captura de códigos de barras a curtas e longas distâncias, ideal para armazéns altos e pátios (yards), minimizando movimentação e fadiga do operador."
-              }
-            ].map((item, index) => (
-              <div key={index} className="bg-card/80 backdrop-blur-md border border-border rounded-xl p-5 sm:p-6 hover:border-accent transition-all duration-300 hover:scale-105 hover:shadow-[0_0_30px_rgba(255,59,59,0.3)]">
-                <h4 className="text-lg sm:text-xl font-bold text-foreground mb-4">{item.feature}</h4>
-                
-                <div className="grid grid-cols-2 gap-4 mb-4">
-                  <div className="space-y-2">
-                    <div className="flex items-center gap-2 mb-2">
-                      <img src={mc33Image} alt="MC33" className="h-12 sm:h-14 w-auto object-contain" />
-                      <span className="font-semibold text-foreground text-sm sm:text-base">MC33</span>
-                    </div>
-                    <p className="text-sm sm:text-base text-muted-foreground">{item.mc33}</p>
-                  </div>
-                  
-                  <div className="space-y-2">
-                    <div className="flex items-center gap-2 mb-2">
-                      <img src={mc34Image} alt="MC34" className="h-12 sm:h-14 w-auto object-contain" />
-                      <span className="font-semibold text-foreground text-sm sm:text-base">MC34</span>
-                    </div>
-                    <p className="text-sm sm:text-base text-accent font-semibold">{item.mc34}</p>
-                  </div>
-                </div>
-                
-                <div className="pt-4 border-t border-border">
-                  <p className="text-sm sm:text-base text-muted-foreground">{item.advantage}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* Statistics */}
-        <Statistics />
-
-        {/* Video Showcase */}
-        <div className="max-w-5xl mx-auto mt-12 sm:mt-16 mb-12 sm:mb-16">
-          <div className="bg-card/80 backdrop-blur-md border border-border rounded-xl overflow-hidden hover:scale-105 hover:shadow-[0_0_30px_rgba(255,59,59,0.3)] transition-all duration-300">
+          <div className="bg-card/80 backdrop-blur-md border border-border rounded-xl overflow-hidden">
             <video 
+              src={showcaseVideo}
               autoPlay 
               loop 
               muted 
               playsInline
               className="w-full h-auto"
-            >
-              <source src={showcaseVideo} type="video/mp4" />
-            </video>
+            />
           </div>
         </div>
 
-        {/* Conclusion */}
-        <div className="max-w-5xl mx-auto mt-12 sm:mt-16">
-          <div className="bg-card/80 backdrop-blur-md border border-border rounded-xl p-6 sm:p-8 lg:p-12">
-            <h3 className="text-3xl font-bold text-foreground mb-6">
-              Conclusão: Um Salto Quântico em Performance
+        {/* Cases Nissan */}
+        <div 
+          ref={nissanRef}
+          className={`mb-16 sm:mb-20 transition-all duration-1000 delay-400 ${
+            nissanVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+          }`}
+        >
+          <div className="bg-card/80 backdrop-blur-md border border-border rounded-xl p-6 sm:p-8 lg:p-10">
+            <div className="flex items-center justify-center mb-8">
+              <img 
+                src={nissanLogo} 
+                alt="Nissan" 
+                className="h-16 sm:h-20 md:h-24 w-auto object-contain"
+              />
+            </div>
+            <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-center mb-8 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+              Cases Nissan
             </h3>
-            <p className="text-lg text-muted-foreground leading-relaxed mb-6">
-              A transição para a nova geração de coletores representa um investimento direto na eficiência e 
-              na resiliência da sua operação. As melhorias não são apenas incrementais; elas redefinem o que 
-              é possível em campo e no armazém.
-            </p>
-            <ul className="space-y-4 text-muted-foreground">
-              <li className="flex items-start gap-3">
-                <span className="text-accent font-bold mt-1">•</span>
-                <span>
-                  <strong className="text-foreground">Maior conectividade</strong> se traduz em menos falhas 
-                  de rede e mais rapidez na conclusão de tarefas.
-                </span>
-              </li>
-              <li className="flex items-start gap-3">
-                <span className="text-accent font-bold mt-1">•</span>
-                <span>
-                  A <strong className="text-foreground">leitura de longo alcance</strong> permite que os 
-                  operadores trabalhem com mais agilidade e menos interrupções, aumentando a produtividade 
-                  em ambientes complexos.
-                </span>
-              </li>
-              <li className="flex items-start gap-3">
-                <span className="text-accent font-bold mt-1">•</span>
-                <span>
-                  A <strong className="text-foreground">robustez superior</strong> garante que os dispositivos 
-                  resistam às condições mais adversas, resultando em menos custos de manutenção e mais tempo 
-                  em operação (uptime).
-                </span>
-              </li>
-              <li className="flex items-start gap-3">
-                <span className="text-accent font-bold mt-1">•</span>
-                <span>
-                  Com <strong className="text-foreground">memória e processador avançados</strong>, sua empresa 
-                  está preparada para o futuro, com suporte garantido para os aplicativos mais exigentes que 
-                  sua operação possa necessitar.
-                </span>
-              </li>
-            </ul>
-            <p className="text-lg text-accent font-semibold mt-8">
-              A atualização é mais do que uma simples troca de hardware; é a garantia de uma operação mais 
-              inteligente, rápida e à prova de futuro.
-            </p>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
+              <div className="bg-background/50 rounded-lg overflow-hidden border border-border">
+                <img 
+                  src={nissan1} 
+                  alt="Case Nissan 1" 
+                  className="w-full h-64 object-cover"
+                />
+              </div>
+              <div className="bg-background/50 rounded-lg overflow-hidden border border-border">
+                <img 
+                  src={nissan2} 
+                  alt="Case Nissan 2" 
+                  className="w-full h-64 object-cover"
+                />
+              </div>
+              <div className="bg-background/50 rounded-lg overflow-hidden border border-border">
+                <img 
+                  src={nissan3} 
+                  alt="Case Nissan 3" 
+                  className="w-full h-64 object-cover"
+                />
+              </div>
+              <div className="bg-background/50 rounded-lg overflow-hidden border border-border">
+                <img 
+                  src={nissan4} 
+                  alt="Case Nissan 4" 
+                  className="w-full h-64 object-cover"
+                />
+              </div>
+              <div className="bg-background/50 rounded-lg overflow-hidden border border-border">
+                <img 
+                  src={nissan5} 
+                  alt="Case Nissan 5" 
+                  className="w-full h-64 object-cover"
+                />
+              </div>
+              <div className="bg-background/50 rounded-lg overflow-hidden border border-border">
+                <img 
+                  src={nissan6} 
+                  alt="Case Nissan 6" 
+                  className="w-full h-64 object-cover"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Cases Ambev */}
+        <div 
+          ref={ambevRef}
+          className={`mb-16 sm:mb-20 transition-all duration-1000 delay-500 ${
+            ambevVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+          }`}
+        >
+          <div className="bg-card/80 backdrop-blur-md border border-border rounded-xl p-6 sm:p-8 lg:p-10">
+            <div className="flex items-center justify-center mb-8">
+              <img 
+                src={ambevLogo} 
+                alt="Ambev" 
+                className="h-16 sm:h-20 md:h-24 w-auto object-contain"
+              />
+            </div>
+            <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-center mb-8 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+              Cases Ambev
+            </h3>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
+              <div className="bg-background/50 rounded-lg overflow-hidden border border-border">
+                <img 
+                  src={ambev1} 
+                  alt="Case Ambev 1" 
+                  className="w-full h-80 object-cover"
+                />
+              </div>
+              <div className="bg-background/50 rounded-lg overflow-hidden border border-border">
+                <img 
+                  src={ambev2} 
+                  alt="Case Ambev 2" 
+                  className="w-full h-80 object-cover"
+                />
+              </div>
+            </div>
           </div>
         </div>
       </div>
