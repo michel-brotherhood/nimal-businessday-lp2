@@ -7,6 +7,8 @@ import mundialLogo from "@/assets/mundial-logo.png";
 import mc93Equipment from "@/assets/mc93-zebra.webp";
 import dufryLogo from "@/assets/dufry-logo.png";
 import mc33Equipment from "@/assets/mc33-zebra.webp";
+import aguasDoRioLogo from "@/assets/aguas-do-rio-logo.webp";
+import zq521Equipment from "@/assets/zq521-zebra.webp";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
@@ -15,7 +17,7 @@ import { Search, X } from "lucide-react";
 const Evolution = () => {
   const { ref, isVisible } = useScrollAnimation();
   const [searchTerm, setSearchTerm] = useState("");
-  const [activeSegments, setActiveSegments] = useState<string[]>(["Indústria", "Varejo"]);
+  const [activeSegments, setActiveSegments] = useState<string[]>(["Indústria", "Varejo", "Field Service"]);
 
   const segments = [
     {
@@ -49,6 +51,17 @@ const Evolution = () => {
           logo: dufryLogo,
           equipment: "MC33 - Zebra",
           equipmentImage: mc33Equipment,
+        },
+      ],
+    },
+    {
+      name: "Field Service",
+      cases: [
+        {
+          clientName: "Águas do Rio",
+          logo: aguasDoRioLogo,
+          equipment: "ZQ521 - Zebra",
+          equipmentImage: zq521Equipment,
         },
       ],
     },
