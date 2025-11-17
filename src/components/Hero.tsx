@@ -16,7 +16,7 @@ const Hero = () => {
       >
         {/* Business Day 2025 */}
         <div className="mb-6">
-          <h2 className="text-lg sm:text-xl md:text-2xl font-bold text-primary text-center">
+          <h2 className="text-lg sm:text-xl md:text-2xl font-light text-primary text-center tracking-wider animate-pulse-slow drop-shadow-[0_0_15px_rgba(255,59,59,0.6)]">
             Business Day 2025
           </h2>
         </div>
