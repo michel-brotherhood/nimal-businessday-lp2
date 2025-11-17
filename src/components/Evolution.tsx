@@ -1,4 +1,4 @@
-import nissanLogo from "@/assets/nissan-logo.svg";
+import nissanLogo from "@/assets/nissan-logo-new.png";
 import ambevLogo from "@/assets/ambev-logo.png";
 import nissan1 from "@/assets/nissan-1.jpeg";
 import nissan2 from "@/assets/nissan-2.jpeg";
@@ -23,7 +23,7 @@ const Evolution = () => {
         {/* IOT and RFID Introduction */}
         <div 
           ref={contentRef}
-          className={`max-w-5xl mx-auto mb-16 sm:mb-20 transition-all duration-1000 delay-200 ${
+          className={`max-w-5xl mx-auto mb-12 sm:mb-14 transition-all duration-1000 delay-200 ${
             contentVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
           }`}
         >
@@ -69,42 +69,42 @@ const Evolution = () => {
               Cases
             </h3>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
-              <div className="bg-background/50 rounded-lg overflow-hidden border border-border">
+              <div className="bg-background/50 rounded-lg overflow-hidden border border-border transition-transform duration-300 hover:scale-105 hover:shadow-xl cursor-pointer">
                 <img 
                   src={nissan1} 
                   alt="Case Nissan 1" 
                   className="w-full h-64 object-cover"
                 />
               </div>
-              <div className="bg-background/50 rounded-lg overflow-hidden border border-border">
+              <div className="bg-background/50 rounded-lg overflow-hidden border border-border transition-transform duration-300 hover:scale-105 hover:shadow-xl cursor-pointer">
                 <img 
                   src={nissan2} 
                   alt="Case Nissan 2" 
                   className="w-full h-64 object-cover"
                 />
               </div>
-              <div className="bg-background/50 rounded-lg overflow-hidden border border-border">
+              <div className="bg-background/50 rounded-lg overflow-hidden border border-border transition-transform duration-300 hover:scale-105 hover:shadow-xl cursor-pointer">
                 <img 
                   src={nissan3} 
                   alt="Case Nissan 3" 
                   className="w-full h-64 object-cover"
                 />
               </div>
-              <div className="bg-background/50 rounded-lg overflow-hidden border border-border">
+              <div className="bg-background/50 rounded-lg overflow-hidden border border-border transition-transform duration-300 hover:scale-105 hover:shadow-xl cursor-pointer">
                 <img 
                   src={nissan4} 
                   alt="Case Nissan 4" 
                   className="w-full h-64 object-cover"
                 />
               </div>
-              <div className="bg-background/50 rounded-lg overflow-hidden border border-border">
+              <div className="bg-background/50 rounded-lg overflow-hidden border border-border transition-transform duration-300 hover:scale-105 hover:shadow-xl cursor-pointer">
                 <img 
                   src={nissan5} 
                   alt="Case Nissan 5" 
                   className="w-full h-64 object-cover"
                 />
               </div>
-              <div className="bg-background/50 rounded-lg overflow-hidden border border-border">
+              <div className="bg-background/50 rounded-lg overflow-hidden border border-border transition-transform duration-300 hover:scale-105 hover:shadow-xl cursor-pointer">
                 <img 
                   src={nissan6} 
                   alt="Case Nissan 6" 
@@ -134,28 +134,28 @@ const Evolution = () => {
               Cases
             </h3>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
-              <div className="bg-background/50 rounded-lg overflow-hidden border border-border">
+              <div className="bg-background/50 rounded-lg overflow-hidden border border-border transition-transform duration-300 hover:scale-105 hover:shadow-xl cursor-pointer">
                 <img 
                   src={ambev1} 
                   alt="Case Ambev 1" 
                   className="w-full h-80 object-cover"
                 />
               </div>
-              <div className="bg-background/50 rounded-lg overflow-hidden border border-border">
+              <div className="bg-background/50 rounded-lg overflow-hidden border border-border transition-transform duration-300 hover:scale-105 hover:shadow-xl cursor-pointer">
                 <img 
                   src={ambev2} 
                   alt="Case Ambev 2" 
                   className="w-full h-80 object-cover"
                 />
               </div>
-              <div className="bg-background/50 rounded-lg overflow-hidden border border-border">
+              <div className="bg-background/50 rounded-lg overflow-hidden border border-border transition-transform duration-300 hover:scale-105 hover:shadow-xl cursor-pointer">
                 <img 
                   src={ambev3} 
                   alt="Case Ambev 3" 
                   className="w-full h-80 object-cover"
                 />
               </div>
-              <div className="bg-background/50 rounded-lg overflow-hidden border border-border">
+              <div className="bg-background/50 rounded-lg overflow-hidden border border-border transition-transform duration-300 hover:scale-105 hover:shadow-xl cursor-pointer">
                 <img 
                   src={ambev4} 
                   alt="Case Ambev 4" 
