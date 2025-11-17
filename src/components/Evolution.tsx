@@ -17,7 +17,6 @@ import { Search, X } from "lucide-react";
 const Evolution = () => {
   const { ref, isVisible } = useScrollAnimation();
   const [searchTerm, setSearchTerm] = useState("");
-  const [activeSegments, setActiveSegments] = useState<string[]>(["Indústria", "Varejo", "Field Service"]);
 
   const segments = [
     {
@@ -67,19 +66,11 @@ const Evolution = () => {
     },
   ];
 
-  const toggleSegment = (segmentName: string) => {
-    setActiveSegments((prev) =>
-      prev.includes(segmentName)
-        ? prev.filter((s) => s !== segmentName)
-        : [...prev, segmentName]
-    );
-  };
-
   const filteredSegments = segments
-    .filter((segment) => activeSegments.includes(segment.name))
     .map((segment) => ({
       ...segment,
       cases: segment.cases.filter((caseItem) => {
+        if (!searchTerm) return true;
         const searchLower = searchTerm.toLowerCase();
         return (
           caseItem.clientName.toLowerCase().includes(searchLower) ||
@@ -92,9 +83,8 @@ const Evolution = () => {
   return (
     <section className="py-6 sm:py-10 lg:py-14 px-4 relative z-10">
       <div className="max-w-7xl mx-auto">
-        {/* Filtros e Busca */}
-        <div className="mb-12 space-y-6">
-          {/* Busca */}
+        {/* Busca */}
+        <div className="mb-12">
           <div className="relative max-w-md mx-auto">
             <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground h-4 w-4" />
             <Input
@@ -112,20 +102,6 @@ const Evolution = () => {
                 <X className="h-4 w-4" />
               </button>
             )}
-          </div>
-
-          {/* Filtros de Segmento */}
-          <div className="flex flex-wrap justify-center gap-3">
-            {segments.map((segment) => (
-              <Button
-                key={segment.name}
-                variant={activeSegments.includes(segment.name) ? "default" : "outline"}
-                onClick={() => toggleSegment(segment.name)}
-                className="transition-all"
-              >
-                {segment.name}
-              </Button>
-            ))}
           </div>
         </div>
 
