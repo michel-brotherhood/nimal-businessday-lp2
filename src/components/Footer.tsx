@@ -80,7 +80,7 @@ const Footer = () => {
               <img 
                 src={nimalLogo} 
                 alt="Nimal Tecnologia & Zebra" 
-                className="h-24 object-contain"
+                className="h-32 object-contain"
               />
             </div>
           </div>
