@@ -1,4 +1,5 @@
 import Hero from "@/components/Hero";
+import TechnicalServices from "@/components/TechnicalServices";
 import Footer from "@/components/Footer";
 import VideoBackground from "@/components/VideoBackground";
 
@@ -8,6 +9,7 @@ const Index = () => {
       <VideoBackground />
       <div className="relative z-10">
         <Hero />
+        <TechnicalServices />
         <Footer />
       </div>
     </div>
