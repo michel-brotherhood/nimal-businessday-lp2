@@ -34,50 +34,50 @@ const TechnicalServices = () => {
   ];
 
   return (
-    <section className="py-12 sm:py-16 lg:py-20 px-4 relative z-10">
+    <section className="py-8 sm:py-12 md:py-16 lg:py-20 px-4 sm:px-6 lg:px-8 relative z-10">
       <div className="max-w-7xl mx-auto">
         {/* Cases de Manutenção */}
         <div
           ref={casesRef}
-          className={`mb-16 transition-all duration-1000 ${
+          className={`mb-12 sm:mb-16 lg:mb-20 transition-all duration-1000 ${
             casesVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
           }`}
         >
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-10">
             {maintenanceCases.map((caseItem, index) => (
               <div
                 key={index}
-                className="bg-card/50 backdrop-blur-sm rounded-xl p-6 sm:p-8 border border-border/50 hover:border-primary/50 transition-all duration-300"
+                className="bg-card/50 backdrop-blur-sm rounded-xl p-4 sm:p-6 md:p-8 border border-border/50 hover:border-primary/50 transition-all duration-300"
               >
                 {/* Logo do Cliente */}
-                <div className="flex justify-center mb-6">
+                <div className="flex justify-center mb-4 sm:mb-6">
                   <img
                     src={caseItem.logo}
                     alt={`${caseItem.client} Logo`}
-                    className="h-16 sm:h-20 w-auto object-contain"
+                    className="h-12 sm:h-14 md:h-16 lg:h-20 w-auto object-contain"
                   />
                 </div>
 
                 {/* Título do Case */}
-                <div className="text-center mb-6">
-                  <h3 className="text-lg sm:text-xl font-bold text-foreground mb-2">
+                <div className="text-center mb-4 sm:mb-6">
+                  <h3 className="text-base sm:text-lg md:text-xl font-bold text-foreground mb-2">
                     Case manutenção
                   </h3>
-                  <p className="text-xl sm:text-2xl font-bold text-primary">
+                  <p className="text-lg sm:text-xl md:text-2xl font-bold text-primary">
                     {caseItem.client}
                   </p>
-                  <p className="text-base sm:text-lg text-muted-foreground mt-2">
+                  <p className="text-sm sm:text-base md:text-lg text-muted-foreground mt-2">
                     Equipamento {caseItem.equipment}
                   </p>
                 </div>
 
                 {/* Foto do Equipamento */}
                 <div className="flex justify-center">
-                  <div className="bg-background/30 rounded-lg p-4">
+                  <div className="bg-background/30 rounded-lg p-3 sm:p-4">
                     <img
                       src={caseItem.equipmentImage}
                       alt={`Equipamento ${caseItem.equipment}`}
-                      className="w-full max-w-[280px] h-auto object-contain"
+                      className="w-full max-w-[200px] sm:max-w-[240px] md:max-w-[280px] h-auto object-contain"
                     />
                   </div>
                 </div>
@@ -93,22 +93,22 @@ const TechnicalServices = () => {
             teamVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
           }`}
         >
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-center mb-4 text-foreground">
+          <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-center mb-3 sm:mb-4 text-foreground px-4">
             Quem cuida da sua operação quando ela vem para Nimal
           </h2>
 
           {/* Fotos dos Colaboradores */}
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 sm:gap-6 mt-12">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 sm:gap-4 md:gap-6 lg:gap-8 mt-8 sm:mt-10 md:mt-12">
             {team.map((member, index) => (
               <div key={index} className="flex flex-col items-center">
-                <div className="w-48 h-48 sm:w-56 sm:h-56 rounded-full overflow-hidden border-4 border-primary/30 hover:border-primary transition-all duration-300 hover:scale-105">
+                <div className="w-40 h-40 sm:w-44 sm:h-44 md:w-52 md:h-52 lg:w-56 lg:h-56 rounded-full overflow-hidden border-4 border-primary/30 hover:border-primary transition-all duration-300 hover:scale-105">
                   <img
                     src={member.photo}
                     alt={member.name}
                     className="w-full h-full object-cover"
                   />
                 </div>
-                <p className="mt-4 text-lg sm:text-xl font-semibold text-foreground">
+                <p className="mt-3 sm:mt-4 text-base sm:text-lg md:text-xl font-semibold text-foreground text-center px-2">
                   {member.name}
                 </p>
               </div>
