@@ -1,5 +1,6 @@
 import mc33Image from "@/assets/mc33.webp";
 import mc34Image from "@/assets/mc34.webp";
+import showcaseVideo from "@/assets/showcase-video.mp4";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import Statistics from "./Statistics";
 
@@ -195,6 +196,21 @@ const Evolution = () => {
 
         {/* Statistics */}
         <Statistics />
+
+        {/* Video Showcase */}
+        <div className="max-w-5xl mx-auto mt-12 sm:mt-16 mb-12 sm:mb-16">
+          <div className="bg-card/80 backdrop-blur-md border border-border rounded-xl overflow-hidden hover:scale-105 hover:shadow-[0_0_30px_rgba(255,59,59,0.3)] transition-all duration-300">
+            <video 
+              autoPlay 
+              loop 
+              muted 
+              playsInline
+              className="w-full h-auto"
+            >
+              <source src={showcaseVideo} type="video/mp4" />
+            </video>
+          </div>
+        </div>
 
         {/* Conclusion */}
         <div className="max-w-5xl mx-auto mt-12 sm:mt-16">

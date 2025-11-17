@@ -1,5 +1,5 @@
-import { Mail, Phone } from "lucide-react";
-import nimalLogo from "@/assets/nimal-logo-new.webp";
+import { Mail, Phone, Facebook, Instagram, Youtube, Linkedin } from "lucide-react";
+import nimalLogo from "@/assets/nimal-zebra-logos.png";
 import zebraLogo from "@/assets/zebra-logo.svg";
 
 const Footer = () => {
@@ -26,6 +26,46 @@ const Footer = () => {
                 <span className="text-sm">(21) 3620-7777</span>
               </a>
             </div>
+            
+            {/* Social Media */}
+            <div className="flex items-center justify-center md:justify-start gap-4 mt-6">
+              <a 
+                href="https://www.facebook.com/nimal.tecnologia/" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-muted-foreground hover:text-primary transition-colors"
+                aria-label="Facebook"
+              >
+                <Facebook className="w-5 h-5" />
+              </a>
+              <a 
+                href="https://www.instagram.com/nimaltecnologia/" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-muted-foreground hover:text-primary transition-colors"
+                aria-label="Instagram"
+              >
+                <Instagram className="w-5 h-5" />
+              </a>
+              <a 
+                href="https://www.youtube.com/channel/UCrbgEVs1sAnsA95DkJ-xTNg" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-muted-foreground hover:text-primary transition-colors"
+                aria-label="Youtube"
+              >
+                <Youtube className="w-5 h-5" />
+              </a>
+              <a 
+                href="https://www.linkedin.com/company/2050410/" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-muted-foreground hover:text-primary transition-colors"
+                aria-label="LinkedIn"
+              >
+                <Linkedin className="w-5 h-5" />
+              </a>
+            </div>
           </div>
 
           {/* Realization Section */}
@@ -39,8 +79,8 @@ const Footer = () => {
               />
               <img 
                 src={nimalLogo} 
-                alt="Nimal Tecnologia" 
-                className="h-12 object-contain"
+                alt="Nimal Tecnologia & Zebra" 
+                className="h-24 object-contain"
               />
             </div>
           </div>
