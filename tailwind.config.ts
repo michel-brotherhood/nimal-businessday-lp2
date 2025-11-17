@@ -77,10 +77,19 @@ export default {
             height: "0",
           },
         },
+        glow: {
+          "0%, 100%": {
+            filter: "drop-shadow(0 0 25px rgba(255, 59, 59, 0.8))",
+          },
+          "50%": {
+            filter: "drop-shadow(0 0 40px rgba(255, 59, 59, 1)) drop-shadow(0 0 60px rgba(255, 59, 59, 0.6))",
+          },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+        glow: "glow 2s ease-in-out infinite",
       },
     },
   },
