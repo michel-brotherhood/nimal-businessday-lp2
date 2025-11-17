@@ -33,7 +33,7 @@ const Hero = () => {
         <h1 className={`text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold mb-6 bg-gradient-to-r from-primary via-primary to-accent bg-clip-text text-transparent leading-tight animate-pulse-slow transition-all duration-700 ${
           isVisible ? 'drop-shadow-[0_0_25px_rgba(255,59,59,0.8)] animate-glow' : ''
         }`}>
-          Novidades Zebra
+          IOT e RFID
         </h1>
       </div>
     </section>
