@@ -73,13 +73,11 @@ const TechnicalServices = () => {
                       <p className="text-xl sm:text-2xl md:text-3xl font-bold text-primary mb-4">
                         {equip}
                       </p>
-                      <div className="bg-background/30 rounded-lg p-3 sm:p-4">
-                        <img
-                          src={caseItem.equipmentImages[equipIndex]}
-                          alt={equip}
-                          className="w-full max-w-[200px] sm:max-w-[240px] md:max-w-[280px] h-auto object-contain"
-                        />
-                      </div>
+                      <img
+                        src={caseItem.equipmentImages[equipIndex]}
+                        alt={equip}
+                        className="w-full max-w-[200px] sm:max-w-[240px] md:max-w-[280px] h-auto object-contain"
+                      />
                     </div>
                   ))}
                 </div>
