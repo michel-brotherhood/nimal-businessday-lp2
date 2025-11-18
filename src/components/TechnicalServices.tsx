@@ -27,8 +27,8 @@ const TechnicalServices = () => {
 
   const team = [
     { name: "Jefferson Rodrigues", photo: jeffersonPhoto },
-    { name: "Carlos Silveira", photo: ianPhoto },
-    { name: "Ian Oliveira", photo: carlosPhoto },
+    { name: "Carlos Silveira", photo: carlosPhoto },
+    { name: "Ian Oliveira", photo: ianPhoto },
   ];
 
   return (
