@@ -1,8 +1,8 @@
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import lightLogo from "@/assets/light-logo.png";
 import casaEVideoLogo from "@/assets/casa-e-video-logo.png";
-import zq521Equipment from "@/assets/zq521-new.webp";
 import mc9090Equipment from "@/assets/mc9090-new.webp";
+import zq521Equipment from "@/assets/zq521-new.webp";
 import tc21Equipment from "@/assets/tc210k-new.webp";
 import jeffersonPhoto from "@/assets/colaborador-jefferson.png";
 import ianPhoto from "@/assets/colaborador-ian.png";
