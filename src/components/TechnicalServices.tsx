@@ -1,9 +1,9 @@
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import lightLogo from "@/assets/light-logo.png";
 import casaEVideoLogo from "@/assets/casa-e-video-logo.png";
-import zq521Equipment from "@/assets/zq521-light.png";
-import mc9090Equipment from "@/assets/mc9090-zebra.png";
-import tc21Equipment from "@/assets/tc21-zebra.png";
+import zq521Equipment from "@/assets/zq521-new.webp";
+import mc9090Equipment from "@/assets/mc9090-new.webp";
+import tc21Equipment from "@/assets/tc210k-new.webp";
 import jeffersonPhoto from "@/assets/colaborador-jefferson.png";
 import ianPhoto from "@/assets/colaborador-ian.png";
 import carlosPhoto from "@/assets/colaborador-carlos.png";
@@ -14,16 +14,19 @@ const TechnicalServices = () => {
 
   const maintenanceCases = [
     {
-      client: "LIGHT",
       logo: lightLogo,
       equipment: "ZQ521",
       equipmentImage: zq521Equipment,
     },
     {
-      client: "CASA & VÍDEO",
       logo: casaEVideoLogo,
-      equipment: "MC9090 e TC21",
+      equipment: "MC9090",
       equipmentImage: mc9090Equipment,
+    },
+    {
+      logo: casaEVideoLogo,
+      equipment: "TC210K",
+      equipmentImage: tc21Equipment,
     },
   ];
 
@@ -43,12 +46,12 @@ const TechnicalServices = () => {
             casesVisible ? "opacity-100 translate-y-0 scale-100" : "opacity-0 translate-y-16 scale-95"
           }`}
         >
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-10">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 lg:gap-10">
             {maintenanceCases.map((caseItem, index) => (
               <div
                 key={index}
                 className={`bg-card/50 backdrop-blur-sm rounded-xl p-4 sm:p-6 md:p-8 border border-border/50 hover:border-primary/50 transition-all duration-700 ease-out hover:scale-105 ${
-                  casesVisible ? 'opacity-100 translate-x-0' : `opacity-0 ${index === 0 ? '-translate-x-12' : 'translate-x-12'}`
+                  casesVisible ? 'opacity-100 translate-x-0' : `opacity-0 ${index === 0 ? '-translate-x-12' : index === 1 ? 'translate-y-12' : 'translate-x-12'}`
                 }`}
                 style={{ transitionDelay: `${index * 200}ms` }}
               >
@@ -56,21 +59,18 @@ const TechnicalServices = () => {
                 <div className="flex justify-center mb-4 sm:mb-6">
                   <img
                     src={caseItem.logo}
-                    alt={`${caseItem.client} Logo`}
+                    alt="Client Logo"
                     className="h-12 sm:h-14 md:h-16 lg:h-20 w-auto object-contain"
                   />
                 </div>
 
                 {/* Título do Case */}
                 <div className="text-center mb-4 sm:mb-6">
-                  <h3 className="text-base sm:text-lg md:text-xl font-bold text-foreground mb-2">
+                  <h3 className="text-base sm:text-lg md:text-xl font-bold text-foreground mb-3">
                     Case manutenção
                   </h3>
-                  <p className="text-lg sm:text-xl md:text-2xl font-bold text-primary">
-                    {caseItem.client}
-                  </p>
-                  <p className="text-sm sm:text-base md:text-lg text-muted-foreground mt-2">
-                    Equipamento {caseItem.equipment}
+                  <p className="text-xl sm:text-2xl md:text-3xl font-bold text-primary">
+                    {caseItem.equipment}
                   </p>
                 </div>
 
@@ -79,7 +79,7 @@ const TechnicalServices = () => {
                   <div className="bg-background/30 rounded-lg p-3 sm:p-4">
                     <img
                       src={caseItem.equipmentImage}
-                      alt={`Equipamento ${caseItem.equipment}`}
+                      alt={caseItem.equipment}
                       className="w-full max-w-[200px] sm:max-w-[240px] md:max-w-[280px] h-auto object-contain"
                     />
                   </div>
