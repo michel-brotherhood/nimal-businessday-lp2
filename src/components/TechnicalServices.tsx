@@ -1,9 +1,9 @@
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
-import lightLogo from "@/assets/light-logo.png";
+import lightLogo from "@/assets/light-logo-new.png";
 import casaEVideoLogo from "@/assets/casa-e-video-logo.png";
-import zq521Equipment from "@/assets/zq521-nobg.webp";
-import mc9090Equipment from "@/assets/mc9090-nobg.webp";
-import tc21Equipment from "@/assets/tc210k-nobg.webp";
+import zq521Equipment from "@/assets/zq521-new.webp";
+import mc9090Equipment from "@/assets/mc9090-new.webp";
+import tc21Equipment from "@/assets/tc210k-new.webp";
 import jeffersonPhoto from "@/assets/colaborador-jefferson.png";
 import ianPhoto from "@/assets/colaborador-ian.png";
 import carlosPhoto from "@/assets/colaborador-carlos.png";
@@ -58,13 +58,11 @@ const TechnicalServices = () => {
               >
                 {/* Logo do Cliente */}
                 <div className="flex justify-center mb-6 sm:mb-8">
-                  <div className="bg-background/50 rounded-xl p-4 sm:p-5 border border-border/20 group-hover:border-primary/30 transition-colors duration-500">
-                    <img
-                      src={caseItem.logo}
-                      alt="Client Logo"
-                      className="h-14 sm:h-16 md:h-20 lg:h-24 w-auto object-contain"
-                    />
-                  </div>
+                  <img
+                    src={caseItem.logo}
+                    alt="Client Logo"
+                    className="h-14 sm:h-16 md:h-20 lg:h-24 w-auto object-contain"
+                  />
                 </div>
 
                 {/* Equipamentos */}
@@ -75,14 +73,11 @@ const TechnicalServices = () => {
                         <p className="text-2xl sm:text-3xl md:text-4xl font-bold text-primary mb-6 tracking-tight">
                           {equip}
                         </p>
-                        <div className="relative group/image">
-                          <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-accent/10 rounded-2xl blur-xl opacity-0 group-hover/image:opacity-100 transition-opacity duration-500"></div>
-                          <img
-                            src={caseItem.equipmentImages[equipIndex]}
-                            alt={equip}
-                            className="relative w-full max-w-[220px] sm:max-w-[260px] md:max-w-[300px] lg:max-w-[320px] h-auto object-contain transform group-hover/image:scale-105 transition-transform duration-500"
-                          />
-                        </div>
+                        <img
+                          src={caseItem.equipmentImages[equipIndex]}
+                          alt={equip}
+                          className="w-full max-w-[220px] sm:max-w-[260px] md:max-w-[300px] lg:max-w-[320px] h-auto object-contain transform group-hover:scale-105 transition-transform duration-500"
+                        />
                       </div>
                       {equipIndex < caseItem.equipment.length - 1 && (
                         <div className="my-8 flex items-center justify-center">
