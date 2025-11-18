@@ -76,7 +76,11 @@ const TechnicalServices = () => {
                       <img
                         src={caseItem.equipmentImages[equipIndex]}
                         alt={equip}
-                        className="w-full max-w-[200px] sm:max-w-[240px] md:max-w-[280px] h-auto object-contain transition-all duration-500 hover:drop-shadow-[0_0_25px_rgba(255,59,59,0.6)] hover:scale-105"
+                        className={`w-full h-auto object-contain transition-all duration-500 hover:drop-shadow-[0_0_25px_rgba(255,59,59,0.6)] hover:scale-105 ${
+                          equip === 'MC9090' 
+                            ? 'max-w-[160px] sm:max-w-[190px] md:max-w-[220px]' 
+                            : 'max-w-[200px] sm:max-w-[240px] md:max-w-[280px]'
+                        }`}
                       />
                     </div>
                   ))}
