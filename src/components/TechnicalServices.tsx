@@ -69,17 +69,24 @@ const TechnicalServices = () => {
                 {/* Equipamentos */}
                 <div className="space-y-6">
                   {caseItem.equipment.map((equip, equipIndex) => (
-                    <div key={equipIndex} className="flex flex-col items-center">
-                      <p className="text-xl sm:text-2xl md:text-3xl font-bold text-primary mb-4">
-                        {equip}
-                      </p>
-                      <div className="bg-background/30 rounded-lg p-3 sm:p-4">
-                        <img
-                          src={caseItem.equipmentImages[equipIndex]}
-                          alt={equip}
-                          className="w-full max-w-[200px] sm:max-w-[240px] md:max-w-[280px] h-auto object-contain"
-                        />
+                    <div key={equipIndex}>
+                      <div className="flex flex-col items-center">
+                        <p className="text-xl sm:text-2xl md:text-3xl font-bold text-primary mb-4">
+                          {equip}
+                        </p>
+                        <div className="bg-background/30 rounded-lg p-3 sm:p-4">
+                          <img
+                            src={caseItem.equipmentImages[equipIndex]}
+                            alt={equip}
+                            className="w-full max-w-[200px] sm:max-w-[240px] md:max-w-[280px] h-auto object-contain"
+                          />
+                        </div>
                       </div>
+                      {equipIndex < caseItem.equipment.length - 1 && (
+                        <div className="my-6 flex items-center justify-center">
+                          <div className="h-px w-3/4 bg-gradient-to-r from-transparent via-border to-transparent"></div>
+                        </div>
+                      )}
                     </div>
                   ))}
                 </div>
