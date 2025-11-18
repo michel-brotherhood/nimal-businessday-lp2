@@ -15,18 +15,13 @@ const TechnicalServices = () => {
   const maintenanceCases = [
     {
       logo: lightLogo,
-      equipment: "ZQ521",
-      equipmentImage: zq521Equipment,
+      equipment: ["ZQ521"],
+      equipmentImages: [zq521Equipment],
     },
     {
       logo: casaEVideoLogo,
-      equipment: "MC9090",
-      equipmentImage: mc9090Equipment,
-    },
-    {
-      logo: casaEVideoLogo,
-      equipment: "TC210K",
-      equipmentImage: tc21Equipment,
+      equipment: ["MC9090", "TC210K"],
+      equipmentImages: [mc9090Equipment, tc21Equipment],
     },
   ];
 
@@ -46,12 +41,12 @@ const TechnicalServices = () => {
             casesVisible ? "opacity-100 translate-y-0 scale-100" : "opacity-0 translate-y-16 scale-95"
           }`}
         >
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 lg:gap-10">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-10">
             {maintenanceCases.map((caseItem, index) => (
               <div
                 key={index}
                 className={`bg-card/50 backdrop-blur-sm rounded-xl p-4 sm:p-6 md:p-8 border border-border/50 hover:border-primary/50 transition-all duration-700 ease-out hover:scale-105 ${
-                  casesVisible ? 'opacity-100 translate-x-0' : `opacity-0 ${index === 0 ? '-translate-x-12' : index === 1 ? 'translate-y-12' : 'translate-x-12'}`
+                  casesVisible ? 'opacity-100 translate-x-0' : `opacity-0 ${index === 0 ? '-translate-x-12' : 'translate-x-12'}`
                 }`}
                 style={{ transitionDelay: `${index * 200}ms` }}
               >
@@ -69,20 +64,24 @@ const TechnicalServices = () => {
                   <h3 className="text-base sm:text-lg md:text-xl font-bold text-foreground mb-3">
                     Case manutenção
                   </h3>
-                  <p className="text-xl sm:text-2xl md:text-3xl font-bold text-primary">
-                    {caseItem.equipment}
-                  </p>
                 </div>
 
-                {/* Foto do Equipamento */}
-                <div className="flex justify-center">
-                  <div className="bg-background/30 rounded-lg p-3 sm:p-4">
-                    <img
-                      src={caseItem.equipmentImage}
-                      alt={caseItem.equipment}
-                      className="w-full max-w-[200px] sm:max-w-[240px] md:max-w-[280px] h-auto object-contain"
-                    />
-                  </div>
+                {/* Equipamentos */}
+                <div className="space-y-6">
+                  {caseItem.equipment.map((equip, equipIndex) => (
+                    <div key={equipIndex} className="flex flex-col items-center">
+                      <p className="text-xl sm:text-2xl md:text-3xl font-bold text-primary mb-4">
+                        {equip}
+                      </p>
+                      <div className="bg-background/30 rounded-lg p-3 sm:p-4">
+                        <img
+                          src={caseItem.equipmentImages[equipIndex]}
+                          alt={equip}
+                          className="w-full max-w-[200px] sm:max-w-[240px] md:max-w-[280px] h-auto object-contain"
+                        />
+                      </div>
+                    </div>
+                  ))}
                 </div>
               </div>
             ))}
