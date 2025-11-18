@@ -1,9 +1,9 @@
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import lightLogo from "@/assets/light-logo.png";
 import casaEVideoLogo from "@/assets/casa-e-video-logo.png";
-import zq521Equipment from "@/assets/zq521-new.webp";
-import mc9090Equipment from "@/assets/mc9090-new.webp";
-import tc21Equipment from "@/assets/tc210k-new.webp";
+import zq521Equipment from "@/assets/zq521-nobg.webp";
+import mc9090Equipment from "@/assets/mc9090-nobg.webp";
+import tc21Equipment from "@/assets/tc210k-nobg.webp";
 import jeffersonPhoto from "@/assets/colaborador-jefferson.png";
 import ianPhoto from "@/assets/colaborador-ian.png";
 import carlosPhoto from "@/assets/colaborador-carlos.png";
@@ -41,50 +41,52 @@ const TechnicalServices = () => {
             casesVisible ? "opacity-100 translate-y-0 scale-100" : "opacity-0 translate-y-16 scale-95"
           }`}
         >
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-10">
+          <h2 className={`text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-center mb-8 sm:mb-12 text-foreground transition-all duration-700 ${
+            casesVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+          }`}>
+            Cases de <span className="text-primary">Manutenção</span>
+          </h2>
+          
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 lg:gap-12">
             {maintenanceCases.map((caseItem, index) => (
               <div
                 key={index}
-                className={`bg-card/50 backdrop-blur-sm rounded-xl p-4 sm:p-6 md:p-8 border border-border/50 hover:border-primary/50 transition-all duration-700 ease-out hover:scale-105 ${
+                className={`group bg-gradient-to-br from-card/40 to-card/20 backdrop-blur-md rounded-2xl p-6 sm:p-8 md:p-10 border border-border/30 hover:border-primary/50 transition-all duration-700 ease-out hover:scale-[1.02] hover:shadow-[0_0_40px_rgba(255,59,59,0.15)] ${
                   casesVisible ? 'opacity-100 translate-x-0' : `opacity-0 ${index === 0 ? '-translate-x-12' : 'translate-x-12'}`
                 }`}
                 style={{ transitionDelay: `${index * 200}ms` }}
               >
                 {/* Logo do Cliente */}
-                <div className="flex justify-center mb-4 sm:mb-6">
-                  <img
-                    src={caseItem.logo}
-                    alt="Client Logo"
-                    className="h-12 sm:h-14 md:h-16 lg:h-20 w-auto object-contain"
-                  />
-                </div>
-
-                {/* Título do Case */}
-                <div className="text-center mb-4 sm:mb-6">
-                  <h3 className="text-base sm:text-lg md:text-xl font-bold text-foreground mb-3">
-                    Case manutenção
-                  </h3>
+                <div className="flex justify-center mb-6 sm:mb-8">
+                  <div className="bg-background/50 rounded-xl p-4 sm:p-5 border border-border/20 group-hover:border-primary/30 transition-colors duration-500">
+                    <img
+                      src={caseItem.logo}
+                      alt="Client Logo"
+                      className="h-14 sm:h-16 md:h-20 lg:h-24 w-auto object-contain"
+                    />
+                  </div>
                 </div>
 
                 {/* Equipamentos */}
-                <div className="space-y-6">
+                <div className="space-y-8 sm:space-y-10">
                   {caseItem.equipment.map((equip, equipIndex) => (
                     <div key={equipIndex}>
                       <div className="flex flex-col items-center">
-                        <p className="text-xl sm:text-2xl md:text-3xl font-bold text-primary mb-4">
+                        <p className="text-2xl sm:text-3xl md:text-4xl font-bold text-primary mb-6 tracking-tight">
                           {equip}
                         </p>
-                        <div className="bg-background/30 rounded-lg p-3 sm:p-4">
+                        <div className="relative group/image">
+                          <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-accent/10 rounded-2xl blur-xl opacity-0 group-hover/image:opacity-100 transition-opacity duration-500"></div>
                           <img
                             src={caseItem.equipmentImages[equipIndex]}
                             alt={equip}
-                            className="w-full max-w-[200px] sm:max-w-[240px] md:max-w-[280px] h-auto object-contain"
+                            className="relative w-full max-w-[220px] sm:max-w-[260px] md:max-w-[300px] lg:max-w-[320px] h-auto object-contain transform group-hover/image:scale-105 transition-transform duration-500"
                           />
                         </div>
                       </div>
                       {equipIndex < caseItem.equipment.length - 1 && (
-                        <div className="my-6 flex items-center justify-center">
-                          <div className="h-px w-3/4 bg-gradient-to-r from-transparent via-border to-transparent"></div>
+                        <div className="my-8 flex items-center justify-center">
+                          <div className="h-px w-full max-w-xs bg-gradient-to-r from-transparent via-primary/30 to-transparent"></div>
                         </div>
                       )}
                     </div>
