@@ -27,8 +27,8 @@ const TechnicalServices = () => {
 
   const team = [
     { name: "Jefferson Rodrigues", photo: jeffersonPhoto },
-    { name: "Carlos Silveira", photo: carlosPhoto },
-    { name: "Ian Oliveira", photo: ianPhoto },
+    { name: "Carlos Silveira", photo: ianPhoto },
+    { name: "Ian Oliveira", photo: carlosPhoto },
   ];
 
   return (
@@ -37,7 +37,7 @@ const TechnicalServices = () => {
         {/* Cases de Manutenção */}
         <div
           ref={casesRef}
-          className={`mb-12 sm:mb-16 lg:mb-20 transition-all duration-1000 ease-out ${
+          className={`mb-8 sm:mb-10 lg:mb-12 transition-all duration-1000 ease-out ${
             casesVisible ? "opacity-100 translate-y-0 scale-100" : "opacity-0 translate-y-16 scale-95"
           }`}
         >
@@ -97,7 +97,7 @@ const TechnicalServices = () => {
             teamVisible ? "opacity-100 translate-y-0 scale-100" : "opacity-0 translate-y-16 scale-95"
           }`}
         >
-          <h2 className={`text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-center mb-3 sm:mb-4 text-foreground px-4 transition-all duration-700 ${
+          <h2 className={`text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-center mb-3 sm:mb-4 text-foreground px-4 transition-all duration-700 ${
             teamVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
           }`}>
             Quem cuida da sua operação quando ela vem para Nimal
