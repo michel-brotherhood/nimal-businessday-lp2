@@ -51,7 +51,7 @@ const TechnicalServices = () => {
             {maintenanceCases.map((caseItem, index) => (
               <div
                 key={index}
-                className={`group bg-gradient-to-br from-card/40 to-card/20 backdrop-blur-md rounded-2xl p-6 sm:p-8 md:p-10 border border-border/30 hover:border-primary/50 transition-all duration-700 ease-out hover:scale-[1.02] hover:shadow-[0_0_40px_rgba(255,59,59,0.15)] ${
+                className={`group bg-gradient-to-br from-card/40 to-card/20 backdrop-blur-md rounded-2xl ${index === 0 ? 'p-6 sm:p-6 md:p-8' : 'p-6 sm:p-8 md:p-10'} border border-border/30 hover:border-primary/50 transition-all duration-700 ease-out hover:scale-[1.02] ${
                   casesVisible ? 'opacity-100 translate-x-0' : `opacity-0 ${index === 0 ? '-translate-x-12' : 'translate-x-12'}`
                 }`}
                 style={{ transitionDelay: `${index * 200}ms` }}
@@ -61,22 +61,22 @@ const TechnicalServices = () => {
                   <img
                     src={caseItem.logo}
                     alt="Client Logo"
-                    className="h-14 sm:h-16 md:h-20 lg:h-24 w-auto object-contain"
+                    className={`w-auto object-contain ${index === 0 ? 'h-12 sm:h-14 md:h-16' : 'h-14 sm:h-16 md:h-20 lg:h-24'}`}
                   />
                 </div>
 
                 {/* Equipamentos */}
-                <div className="space-y-8 sm:space-y-10">
+                <div className={`${index === 0 ? 'space-y-6 sm:space-y-8' : 'space-y-8 sm:space-y-10'}`}>
                   {caseItem.equipment.map((equip, equipIndex) => (
                     <div key={equipIndex}>
                       <div className="flex flex-col items-center">
-                        <p className="text-2xl sm:text-3xl md:text-4xl font-bold text-primary mb-6 tracking-tight">
+                        <p className={`font-bold text-primary tracking-tight ${index === 0 ? 'text-xl sm:text-2xl md:text-3xl mb-4' : 'text-2xl sm:text-3xl md:text-4xl mb-6'}`}>
                           {equip}
                         </p>
                         <img
                           src={caseItem.equipmentImages[equipIndex]}
                           alt={equip}
-                          className="w-full max-w-[220px] sm:max-w-[260px] md:max-w-[300px] lg:max-w-[320px] h-auto object-contain transform group-hover:scale-105 transition-transform duration-500"
+                          className={`h-auto object-contain transform group-hover:scale-105 transition-transform duration-500 ${index === 0 ? 'w-full max-w-[180px] sm:max-w-[200px] md:max-w-[220px]' : 'w-full max-w-[220px] sm:max-w-[260px] md:max-w-[300px] lg:max-w-[320px]'}`}
                         />
                       </div>
                       {equipIndex < caseItem.equipment.length - 1 && (
